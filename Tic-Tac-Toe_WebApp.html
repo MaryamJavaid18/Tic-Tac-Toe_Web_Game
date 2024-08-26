@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+  <style>
+
+body {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+}
+
+#title {
+    font-size: 2.5rem; 
+    color: #000000; 
+    margin-bottom: 20px; 
+    animation: bounce 1.5s ; 
+    text-align: center; 
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #ffffff; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    background-color: #055b8a; 
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cell:hover {
+    background-color: #0fe8f8; 
+    transform: scale(1.1); /* Slight scaling effect */
+}
+
+.cell.X {
+    color: #f44336; /* Bright red for X */
+    text-shadow: 2px 2px #e57373; /* Shadow effect for X */
+}
+
+.cell.O {
+    color: #2196f3; /* Bright blue for O */
+    text-shadow: 2px 2px #64b5f6; /* Shadow effect for O */
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.cell {
+    animation: appear 0.5s ease-in-out;
+}
+
+#game-board {
+    animation: appear 1s ease-in-out;
+}
+
+/* Bounce animation for the title */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+  </style>
+</head>
+<body>
+    <h1 id="title">Tic-Tac-Toe Game</h1> 
+    <div id="game-board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+    </div>
+    <script src="Tiz-Tac-Toe_Game.js"></script>
+</body>
+</html>
